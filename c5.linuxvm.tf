@@ -30,7 +30,7 @@ resource "azurerm_linux_virtual_machine" "mylinuxvm" {
   network_interface_ids = [data.terraform_remote_state.project1.outputs.network_interface_id]
   admin_ssh_key {
     username = "azureuser"
-    public_key = file("${path.module}/ssh-keys/terraform-azure.pub")
+    public_key = file("${path.module}/ssh-keys/terraform.pub")
   }
   os_disk {
     name = "osdisk${random_string.myrandom.id}"

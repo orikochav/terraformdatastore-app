@@ -3,7 +3,7 @@ locals {
   vm_name = "${var.business_unit}-${var.environment}-${var.virtual_machine_name}"
   #common tags
   service_name = "Demo Service"
-  owner = "Gopal Das"
+  owner = "Ori Kochav"
   common_tags = {
       Service = local.service_name
       Owner = local.owner
