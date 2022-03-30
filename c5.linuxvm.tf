@@ -27,7 +27,7 @@ resource "azurerm_linux_virtual_machine" "mylinuxvm" {
   size = "Standard_DS1_v2"
   admin_username = "azureuser"
   #first vm created attached with first nic second vm it should attach with second nic
-  network_interface_ids = [data.terraform_remote_state.project1.outputs.network_interface_id]
+  network_interface_ids = [azurerm_linux_virtual_machine.mylinuxvm.network_interface_ids]
   admin_ssh_key {
     username = "azureuser"
     public_key = file("${path.module}/ssh-keys/terraform.pub")
